@@ -1,8 +1,12 @@
+var fs = require('fs');
+
 
 exports.checkBlacklist = async(request, response, next) => {
   try {
     let ip = request.params.ip.toString();
-    let blacklist = ["127.0.0.1","127.0.0.2","127.0.0.3","127.0.0.4"]
+    let blacklist = await readBlacklistFile();
+    console.log(blacklist);
+
     console.log("Checking if IP: ",ip,"is in blacklist...");
     if (blacklist.includes(ip)){
       return response.status(200).json({
@@ -30,4 +34,14 @@ exports.checkBlacklist = async(request, response, next) => {
       'response': 500
     });
   }
+}
+
+async function readBlacklistFile(){
+  console.log("Reading Ip Blacklist file...");
+  return fs.readFileSync('./data/MaliciousIp.csv')
+    .toString() // convert Buffer to string
+    .split('\n') // split string to lines
+    .map(e => e.trim()) // remove white spaces for each line
+    // .map(e => e.split(',').map(e => e.trim())); // split each line to array
+
 }
