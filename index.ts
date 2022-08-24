@@ -27,6 +27,5 @@ var cache = (duration) => {
 }
 //cache api request for 60 seconds
 app.use('/api/',cache(60),ipBlacklistRoutes);
-// app.use('/api/',ipBlacklistRoutes);
 
 app.listen(3000)

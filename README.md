@@ -3,15 +3,21 @@ A Node.js Express API that manages a blocklist of IPs. This project pulls a dail
 
 ## Getting started
 
-To start the project run:
+To start the project, run:
 `bash start.sh`
 
-To stop the project run:
+To stop the project, run:
 `bash stop.sh`
 
-To test the project run:
+To test the project, run:
 `mocha test/test.js`
 
+## Logging
+To view logs for backend process, run:
+`pm2 logs IP-Blocklist-Background --lines 1000`
+
+To view logs for API process, run:
+`pm2 logs IP-Blocklist --lines 1000`
 
 ## IP-Blocklist features
 
