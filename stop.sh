@@ -3,6 +3,9 @@ echo '**************************************************************************
 echo ' Stopping IP-Blocklist'
 echo '*****************************************************************************************'
 
+pm2 stop IP-Blocklist-Background
+pm2 delete IP-Blocklist-Background
+
 pm2 stop IP-Blocklist
 pm2 delete IP-Blocklist
 
