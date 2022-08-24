@@ -15,11 +15,7 @@ To test the project run:
 
 ## IP-Blocklist features
 
-
-- API cache implemented for queries using [memory-cache](https://www.npmjs.com/package/memory-cache) for similar queries made within 20 seconds of each other
-
-
-A written explanation of the design choices you made, and how it meets both the functional and non-functional requirements.
+- API cache implemented for queries using [memory-cache](https://www.npmjs.com/package/memory-cache) for similar queries made within 60 seconds of each other.
 
 ## Design choices
 

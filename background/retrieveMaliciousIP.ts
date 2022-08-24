@@ -5,7 +5,7 @@ const ObjectsToCsv = require('objects-to-csv');
 console.log("Background process is running...");
 
 let times = [
-  {hour: 7, minute: 50}
+  {hour: 7, minute: 00}
 ];
 times.forEach(function(time) {
   var j = schedule.scheduleJob(time, function() {
