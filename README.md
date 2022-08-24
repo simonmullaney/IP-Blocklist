@@ -19,14 +19,12 @@ To view logs for backend process, run:
 To view logs for API process, run:
 `pm2 logs IP-Blocklist --lines 1000`
 
-## IP-Blocklist features
-
-- API cache implemented for queries using [memory-cache](https://www.npmjs.com/package/memory-cache) for similar queries made within 60 seconds of each other.
-
 ## Design choices
 
-- Process to pull [Ip list](https://github.com/stamparm/ipsum) is run as a background process which pulls a new IP list daily at 0800 UTC. This was implemented instead of pulling the file on every request to improve API response time.
+- Process to pull [Ip list](https://github.com/stamparm/ipsum) is run as a background process which pulls a new IP list daily at 0700 UTC. This was implemented instead of pulling the file on every request to improve API response time.
+- API cache implemented for queries using [memory-cache](https://www.npmjs.com/package/memory-cache) for similar queries made within 60 seconds of each other.
 
 ## Improvements:
 
 - More thorough testing required. Better presentation of test results.
+- Detailed code review.
