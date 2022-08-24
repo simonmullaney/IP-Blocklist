@@ -10,7 +10,7 @@ To stop the project, run:
 `bash stop.sh`
 
 To test the project, run:
-`mocha test/test.js`
+`mocha test/test.ts`
 
 ## Logging
 To view logs for backend process, run:

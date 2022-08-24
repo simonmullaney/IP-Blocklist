@@ -1,4 +1,4 @@
-var fs = require('fs');
+const fs = require('fs');
 
 exports.checkBlacklist = async(request, response, next) => {
   try {

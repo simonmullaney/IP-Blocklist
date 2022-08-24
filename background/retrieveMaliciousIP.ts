@@ -1,4 +1,4 @@
-var schedule = require('node-schedule');
+const schedule = require('node-schedule');
 const request = require('request')
 const ObjectsToCsv = require('objects-to-csv');
 
@@ -8,7 +8,7 @@ let times = [
   {hour: 7, minute: 00}
 ];
 times.forEach(function(time) {
-  var j = schedule.scheduleJob(time, function() {
+  let j = schedule.scheduleJob(time, function() {
     console.log('This job was supposed to run at ' + time.hour + ':' + time.minute + ', but actually ran at ' + new Date());
     retrieveMaliciousIp()
   });
@@ -20,10 +20,10 @@ function retrieveMaliciousIp(){
       request.get({
       url: 'https://raw.githubusercontent.com/stamparm/ipsum/master/ipsum.txt',
       }, function(error, response, body){
-        var responseArray = body.toString().split('\n').map(function(ln){
+        let responseArray = body.toString().split('\n').map(function(ln){
             return ln.split('\t');
         });
-        var objects=[];
+        let objects=[];
         for(ipAddress of responseArray){
           if (ipAddress[0]!==undefined && ipAddress[0].toString()!=='#') {
             ipAddress.pop();
